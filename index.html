@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avinash Cloud Services</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #0ea5e9;
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #ffffff;
+}
+
+body.light {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #0f172a;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: #020617;
+    position: sticky;
+    top: 0;
+}
+nav h2 { color: var(--primary); }
+nav a {
+    margin: 0 10px;
+    color: #cbd5f5;
+    text-decoration: none;
+}
+.toggle {
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+.hero h1 {
+    font-size: 50px;
+}
+.hero span {
+    color: var(--primary);
+}
+
+/* Button */
+.btn {
+    background: var(--primary);
+    padding: 12px 25px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Services */
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+.card {
+    background: var(--card);
+    padding: 20px;
+    width: 280px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+}
+.stat {
+    text-align: center;
+}
+
+/* Contact */
+.contact {
+    text-align: center;
+    padding: 40px;
+}
+input, textarea {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h2>Avinash Cloud</h2>
+    <div>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <span class="toggle" onclick="toggleTheme()">🌙</span>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <h1>Build Your Future with <span>Cloud & DevOps</span></h1>
+    <p>Scalable | Secure | Automated</p>
+    <button class="btn" onclick="scrollToSection()">Explore Services</button>
+</section>
+
+<!-- Services -->
+<section id="services" class="services">
+    <div class="card">
+        <h3>AWS Infrastructure</h3>
+        <p>Highly scalable cloud architecture using EC2, VPC, S3</p>
+    </div>
+    <div class="card">
+        <h3>CI/CD Pipelines</h3>
+        <p>Jenkins-based automation for faster deployments</p>
+    </div>
+    <div class="card">
+        <h3>Kubernetes</h3>
+        <p>Container orchestration with high availability</p>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+    <div class="stat">
+        <h2 id="clients">0</h2>
+        <p>Clients</p>
+    </div>
+    <div class="stat">
+        <h2 id="projects">0</h2>
+        <p>Projects</p>
+    </div>
+    <div class="stat">
+        <h2 id="uptime">0</h2>
+        <p>% Uptime</p>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Your Email"><br>
+    <textarea placeholder="Your Message"></textarea><br>
+    <button class="btn">Submit</button>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Avinash Cloud Services</p>
+</footer>
+
+<script>
+/* Theme Toggle */
+function toggleTheme() {
+    document.body.classList.toggle("light");
+}
+
+/* Scroll */
+function scrollToSection() {
+    document.getElementById("services").scrollIntoView();
+}
+
+/* Animated Counters */
+function animateValue(id, end) {
+    let i = 0;
+    let interval = setInterval(() => {
+        i++;
+        document.getElementById(id).innerText = i;
+        if (i >= end) clearInterval(interval);
+    }, 30);
+}
+
+window.onload = () => {
+    animateValue("clients", 50);
+    animateValue("projects", 120);
+    animateValue("uptime", 99);
+};
+</script>
+
+</body>
+</html>
