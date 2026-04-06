@@ -29,7 +29,7 @@ pipeline{
 		stage('build-done'){
 			steps{
 				echo "All stages have been completed successfully"
-				echo "Contaienr is ready to ship frmo dev to prod"
+				echo "Container is ready to ship from dev to prod"
 			
 			}
 		}
