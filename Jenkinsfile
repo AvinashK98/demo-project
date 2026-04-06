@@ -10,7 +10,7 @@ pipeline{
 		}
 		stage('docker-run'){
 			steps{
-				sh 'docker run -dp 80:80 -- name httpd avinashk98/app:v1'
+				sh 'docker run -dp 80:80 --name httpd avinashk98/app:v1'
 			}
 		}
 	}
