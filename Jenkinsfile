@@ -5,6 +5,8 @@ pipeline{
 	stages{
 		stage('clean-workspace'){
 			steps{
+				sh 'docker kill httpd'
+				sh 'docker system prune -fa'
 				echo "workspace cleaning before build starts..."
 				cleanWs()
 				echo "workspace cleaning has been completed!"
